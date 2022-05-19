@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{/layout.html}">
+   <head></head>
+   <body>
+      <div layout:fragment="contents">
+      
+      <h1>Welcome to WE ATTEND</h1>
+         <div>Please pick one below</div>
+         <div>
+               <!-- <label>Student capturing</label> -->
+               <a class="button" id="upload" href="/uploadStudents">Upload students</a>
+            
+               <!-- <label>Attendance capturing</label> -->
+               <a class="button" id="sheets" href="/loadTimesheet">Load a timesheet</a>
+
+               <!-- <label>Retrieve attendance</label> -->
+               <a class="button" id="attendance" href="/attendance">View attendance</a>
+
+               <!-- <label>CRUD a student</label> -->
+               <a class="button" id="add_student" href="/addStudentDetails">Add a NEW student to the system</a>
+               <a class="button" id="get_all" href="/all">List all students</a>
+
+         </div>
+   </div>
+   </body>
+</html>

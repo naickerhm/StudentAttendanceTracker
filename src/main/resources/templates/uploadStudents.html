@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{/layout.html}">
+   <head></head>
+   <body>
+     <div layout:fragment="contents">
+       <!-- <h2 style = "font-size: 25px;"></h2> -->
+       <div>
+		<form method="POST" enctype="multipart/form-data" action="/upload">
+			<table>
+            <caption class="tableHeading">Please upload the file containing student details (csv format!)</caption>
+				<tr><td style ="font-size: 25px; font: -webkit-control;">File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input class="button" type="submit" value="Upload" /></td></tr>
+			</table>
+		</form>
+	</div>
+
+      </div>
+   </body>
+</html>

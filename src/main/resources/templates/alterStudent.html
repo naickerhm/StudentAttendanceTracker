@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{/layout.html}">
+   <head></head>
+   <body>
+     <div layout:fragment="contents">
+       <h2 style = "font-size: 30px;">Please enter new student details:</h2>
+       <div>
+		<form method="POST" th:action="@{/update(studentId=${param.studentId})}">
+			<table style ="font-size: 15px; font: -webkit-control;">
+               <div>
+                <label for="firstName">First Name</label>
+                <input class="formBox" name="firstName" id="firstName" autofocus required>
+               </div>
+                <div>
+                <label for="lastname">Last Name</label>
+                <input class="formBox" name="lastname" id="lastname" autofocus required>
+               </div>
+                <div>
+                <label for="cohortYear">Cohort year</label>
+                <input class="formBox" name="cohortYear" id="cohortYear" autofocus required>
+               </div>
+                <div>
+                <label for="campus">Campus</label>
+                <input class="formBox" name="campus" id="campus" autofocus required>
+               </div>
+                <input class="button" id="update_student" type="submit" value="Update student"/>
+			</table>
+		</form>
+	</div>
+
+      </div>
+   </body>
+</html>

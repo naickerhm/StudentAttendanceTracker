@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{/layout.html}">
+   <head></head>
+   <body>
+     <div layout:fragment="contents">
+       <h1>Students at WeThinkCode_</h1>
+       
+       <div th:if="${not #lists.isEmpty(students)}">
+          <div>
+          <form method="POST" th:action="@{/attendance}">
+            <table style ="font-size: 15px; font: -webkit-control;">
+              <div>
+                <label for="startDate">Start Date</label>
+                <input name="startDate" type="date" required th:value="${startDate}">
+              </div>
+              <div>
+                <label for="endDate">End Date</label>
+                <input name="endDate" type="date" required th:value="${endDate}">
+              </div>
+              <div>
+                <input style = "width: 50%; vertical-align: middle;" class="button" id="set_range" type="submit" value="Set Date Range"/>
+              </div>
+            </table>
+          </form>
+        </div>
+        <div>
+
+            <table id="students">
+                <thead>
+                    <tr>
+                      <th>Username</th>
+                      <!-- <th>First Name</th> -->
+                      <!-- <th>Last Name</th> -->
+                      <th>Campus</th>
+                      <th>Cohort</th>
+                      <th>Days Attended</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr th:each="student : ${students}">
+                        <td th:text="${student.username}"></td>
+                        <!-- <td th:text="${student.firstName}"></td>
+                        <td th:text="${student.lastName}"></td> -->
+                        <td th:text="${student.campus}"></td>
+                        <td th:text="${student.cohortYear}"></td>
+                        <td th:text="${student.getAttendanceDays(startDate, endDate)}"></td>
+                      </tr>
+                  </tbody>
+            </table>
+          </div>
+       </div>
+      </div>
+   </body>
+</html>
